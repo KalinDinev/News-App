@@ -12,7 +12,11 @@
         tools:layout="@layout/fragment_news_topic" >
         <action
             android:id="@+id/action_newsTopic_to_articles"
-            app:destination="@id/articles" />
+            app:destination="@id/articles"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/articles"
@@ -21,13 +25,21 @@
         tools:layout="@layout/fragment_articles" >
         <action
             android:id="@+id/action_articles_to_newsTopic"
-            app:destination="@id/newsTopic" />
+            app:destination="@id/newsTopic"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
         <argument
             android:name="currentTopic"
             app:argType="string" />
         <action
             android:id="@+id/action_articles_to_articleDetails"
-            app:destination="@id/articleDetails" />
+            app:destination="@id/articleDetails"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/articleDetails"
@@ -36,7 +48,11 @@
         tools:layout="@layout/fragment_article_details" >
         <action
             android:id="@+id/action_articleDetails_to_articles"
-            app:destination="@id/articles" />
+            app:destination="@id/articles"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
         <argument
             android:name="currentArticle"
             app:argType="com.example.newsapp.models.Articles" />

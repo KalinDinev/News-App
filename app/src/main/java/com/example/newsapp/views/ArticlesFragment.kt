@@ -33,17 +33,15 @@ class ArticlesFragment : Fragment() {
     private var counter: Int = 0
 
 
-
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
         binding = FragmentArticlesBinding.inflate(inflater, container, false)
         val root = binding.root
 
         run()
-        binding.counter.text ="Read article's ($counter)"
+        binding.counter.text = "Read article's ($counter)"
 
         return root
     }
@@ -52,11 +50,10 @@ class ArticlesFragment : Fragment() {
 
     private fun run() {
         val currentTopic = args.currentTopic
-        val url ="https://newsapi.org/v2/top-headlines?country=us&category=$currentTopic&apiKey=b27c2c2641ba4772b1fbc42bb09f9f84"
+        val url =
+            "https://newsapi.org/v2/top-headlines?country=us&category=$currentTopic&apiKey=b27c2c2641ba4772b1fbc42bb09f9f84"
 
-        val request = Request.Builder()
-            .url(url)
-            .build()
+        val request = Request.Builder().url(url).build()
 
         client.newCall(request).enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
@@ -82,7 +79,8 @@ class ArticlesFragment : Fragment() {
             }
         })
 
-        sharedPreferences = requireContext().getSharedPreferences("CounterPrefs", Context.MODE_PRIVATE)
+        sharedPreferences =
+            requireContext().getSharedPreferences("CounterPrefs", Context.MODE_PRIVATE)
         counter = sharedPreferences.getInt("counter", 0)
     }
 
@@ -104,7 +102,8 @@ class ArticlesFragment : Fragment() {
         binding.counter.text = "Read article's ($counter)"
 
         // Save the counter value in SharedPreferences
-        val sharedPreferences = requireContext().getSharedPreferences("CounterPrefs", Context.MODE_PRIVATE)
+        val sharedPreferences =
+            requireContext().getSharedPreferences("CounterPrefs", Context.MODE_PRIVATE)
         sharedPreferences.edit().putInt("counter", counter).apply()
     }
 

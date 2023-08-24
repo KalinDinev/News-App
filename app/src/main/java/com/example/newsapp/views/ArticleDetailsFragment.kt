@@ -19,8 +19,7 @@ class ArticleDetailsFragment : Fragment() {
     private lateinit var binding: FragmentArticleDetailsBinding
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
         binding = FragmentArticleDetailsBinding.inflate(inflater, container, false)
@@ -32,8 +31,8 @@ class ArticleDetailsFragment : Fragment() {
         val description = args.currentArticle.description
         val publishAt = args.currentArticle.publishAt
         val content = args.currentArticle.content
-        val urlToWeb =args.currentArticle.url
-        val openBtn =binding.openBtn
+        val urlToWeb = args.currentArticle.url
+        val openBtn = binding.openBtn
 
         //We are checking for null value's from the API and set default value's if so...
         checkValues(author, title, description, publishAt, content)
@@ -51,11 +50,7 @@ class ArticleDetailsFragment : Fragment() {
 
 
     private fun checkValues(
-        author: String?,
-        title: String?,
-        description: String?,
-        publishAt: String?,
-        content: String?
+        author: String?, title: String?, description: String?, publishAt: String?, content: String?
     ) {
         if (author == null) {
             binding.authorTextView.text = "Author:Unknown"

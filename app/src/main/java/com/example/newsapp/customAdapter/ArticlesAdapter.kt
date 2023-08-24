@@ -16,8 +16,7 @@ import com.example.newsapp.views.ArticlesFragmentDirections
 
 
 class ArticlesAdapter(
-    private var news: News,
-    private val onItemClick: () -> Unit
+    private var news: News, private val onItemClick: () -> Unit
 ) : RecyclerView.Adapter<ArticlesAdapter.ViewHolder>() {
 
 
